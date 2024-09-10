@@ -22,7 +22,8 @@ body {
 #user-register-form,
 #chalogin-form,
 #create-userprofile,
-#review-userprofile {
+#review-userprofile,
+#edit-userprofile {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -42,7 +43,8 @@ body {
 
 }
 
-#navbar a {
+#navbar a,
+#edit-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -50,4 +52,9 @@ body {
     box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     padding: 5px;
 
+}
+
+#edit-a-button {
+    margin-top: 20px;
+    text-align: center;
 }

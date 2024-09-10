@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}瀏覽基本資料{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>修改基本資料</h1>
+</div>
+
+<div id="edit-userprofile">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="{{form.name.id_for_label}}">姓名</label> <br>
+        {{form.name}} <br>
+
+        <label for="{{form.gender.id_for_label}}">性別</label> <br>
+        {{form.gender}} <br>
+
+        <label for="{{form.birthday.id_for_label}}">生日</label> <br>
+        {{form.birthday}} <br>
+
+        <label for="{{form.email.id_for_label}}">信箱</label> <br>
+        {{form.email}} <br>
+
+        <label for="{{form.tel.id_for_label}}">電話</label> <br>
+        {{form.tel}} <br>
+
+        <label for="{{form.address.id_for_label}}">地址</label> <br>
+        {{form.address}} <br>
+
+        <div id="message">
+            {{message}}
+        </div>
+
+        <div id="errors">
+            {% for field in form %}
+            {% if field.errors %}
+            {% for error in field.errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+        <input type="submit" value="確定" id="submit-button">
+        <input type="reset" value="清除" id="reset-button">
+
+
+    </form>
+</div>
+
+{% endblock %}

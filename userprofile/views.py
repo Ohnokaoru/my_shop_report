@@ -11,7 +11,7 @@ from .models import UserProfile
 def create_userprofile(request):
     try:
         UserProfile.objects.get(user=request.user)
-        return redirect("chalogin")
+        return redirect("review-userprofile")
 
     except UserProfile.DoesNotExist:
         message = ""
@@ -23,7 +23,7 @@ def create_userprofile(request):
                 userprofileform = form.save(commit=False)
                 userprofileform.user = request.user
                 userprofileform.save()
-                message = "基本資料新增完成"
+                return redirect("review-userprofile")
 
             else:
                 message = "資料錯誤"
@@ -34,7 +34,7 @@ def create_userprofile(request):
         return render(
             request,
             "userprofile/create-userprofile.html",
-            {"form": form, "message": message, "userprofileform": userprofileform},
+            {"form": form, "message": message},
         )
 
 
@@ -48,4 +48,34 @@ def review_userprofile(request):
 
     return render(
         request, "userprofile/review-userprofile.html", {"userprofile": userprofile}
+    )
+
+
+# 修改基本資料
+@login_required
+def edit_userprofile(request):
+    message = ""
+    try:
+        userprofile = UserProfile.objects.get(user=request.user)
+
+    except UserProfile.DoesNotExist:
+        return redirect("create-userprofile")
+
+    if request.method == "POST":
+        form = UserprofileForm(request.POST, instance=userprofile)
+
+        if form.is_valid():
+            userprofileform = form.save(commit=False)
+            userprofileform.user = request.user
+            userprofileform.save()
+            return redirect("review-userprofile")
+
+        else:
+            message = "資料錯誤"
+
+    else:
+        form = UserprofileForm(instance=userprofile)
+
+    return render(
+        request, "userprofile/edit-userprofile.html", {"message": message, "form": form}
     )
