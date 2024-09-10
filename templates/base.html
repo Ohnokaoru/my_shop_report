@@ -11,6 +11,18 @@
 </head>
 
 <body>
+    <div id="navbar">
+        {% if request.user.is_authenticated %}
+        歡迎{{request.user.username}}:
+        <a href="{% url 'create-userprofile' %}">新增基本資料</a>
+        <a href="{% url 'user-logout' %}">登出</a>
+
+        {% else %}
+        <a href="{% url 'user-register' %}">註冊</a>
+        <a href="{% url 'chalogin' %}">登入</a>
+
+        {% endif %}
+    </div>
     {% block content %}{% endblock %}
 </body>
 

@@ -6,9 +6,13 @@ from .models import UserProfile
 
 class UserProfileAdmin(admin.ModelAdmin):
     list_display = ("username", "name", "email", "tel", "address")
-    search_fields = ("username", "email")
-    list_filter = ("username",)
+    search_fields = ("user__username", "email")
+    list_filter = ("user__username",)
     ordering = ("id",)
+
+    # obj為實體物件
+    def username(self, obj):
+        return obj.user.username
 
 
 admin.site.register(UserProfile, UserProfileAdmin)

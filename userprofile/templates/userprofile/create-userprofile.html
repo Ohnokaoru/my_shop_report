@@ -1,26 +1,33 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title%}登入{% endblock %}
+{% block title%}新增基本資料{% endblock %}
 
 {% block content %}
 <div id="title">
-    <h1>登入</h1>
+    <h1>新增基本資料入</h1>
 </div>
 
-
-<div id="chalogin-form">
+<div id="create-userprofile">
     <form action="" method="POST">
         {% csrf_token %}
-        <label for="{{form.username.id_for_label}}">使用者帳號</label> <br>
-        {{form.username}} <br>
 
-        <label for="{{form.password.id_for_label}}">密碼</label> <br>
-        {{form.password}} <br>
+        <label for="{{form.name.id_for_label}}">姓名</label> <br>
+        {{form.name}} <br>
 
-        <label for="{{form.captcha.id_for_label}}">驗證碼</label> <br>
-        {{form.captcha}} <br>
+        <label for="{{form.gender.id_for_label}}">性別</label> <br>
+        {{form.gender}} <br>
 
+        <label for="{{form.birthday.id_for_label}}">生日</label> <br>
+        {{form.birthday}} <br>
 
+        <label for="{{form.email.id_for_label}}">信箱</label> <br>
+        {{form.email}} <br>
+
+        <label for="{{form.tel.id_for_label}}">電話</label> <br>
+        {{form.tel}} <br>
+
+        <label for="{{form.address.id_for_label}}">地址</label> <br>
+        {{form.address}} <br>
 
         <div id="message">
             {{message}}
@@ -45,6 +52,8 @@
 
         <input type="submit" value="確定" id="submit-button">
         <input type="reset" value="清除" id="reset-button">
+
+
     </form>
 </div>
 

@@ -20,7 +20,8 @@ body {
 }
 
 #user-register-form,
-#chalogin-form {
+#chalogin-form,
+#create-userprofile {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -30,4 +31,22 @@ body {
 
 #chalogin-form {
     width: 20%;
+}
+
+#navbar {
+    background-color: rgb(243, 154, 139);
+    padding: 10px;
+
+
+
+}
+
+#navbar a {
+    background-color: aliceblue;
+    margin-left: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 5px;
+
 }

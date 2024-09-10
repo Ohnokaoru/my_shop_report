@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 class UserProfile(models.Model):
-    name = models.CharField(max_length="20")
+    name = models.CharField(max_length=20)
     gender_choice = [("M", "男"), ("F", "女")]
     gender = models.CharField(max_length=1, choices=gender_choice)
     birthday = models.DateField()
