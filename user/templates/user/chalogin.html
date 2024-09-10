@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}登入{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>登入</h1>
+</div>
+
+
+<div id="chalogin-form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="{{form.username.id_for_label}}">使用者帳號</label> <br>
+        {{form.username}} <br>
+
+        <label for="{{form.password.id_for_label}}">使用者帳號</label> <br>
+        {{form.password}} <br>
+
+        <label for="{{form.captcha.id_for_label}}">驗證碼</label> <br>
+        {{form.captcha}} <br>
+
+
+
+        <div id="message">
+            {{message}}
+        </div>
+
+        <div id="errors">
+            {% for field in form %}
+            {% if field.errors %}
+            {% for error in field.errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+        <input type="submit" value="確定" id="submit-button">
+        <input type="reset" value="清除" id="reset-button">
+    </form>
+</div>
+
+{% endblock %}
