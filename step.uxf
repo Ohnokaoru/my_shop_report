@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>20</x>
-      <y>130</y>
+      <x>170</x>
+      <y>110</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>20</y>
+      <x>390</x>
+      <y>0</y>
       <w>150</w>
       <h>80</h>
     </coordinates>
@@ -30,8 +30,8 @@ chalogin</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>160</y>
+      <x>310</x>
+      <y>140</y>
       <w>60</w>
       <h>30</h>
     </coordinates>
@@ -41,8 +41,8 @@ chalogin</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>40</y>
+      <x>340</x>
+      <y>20</y>
       <w>30</w>
       <h>690</h>
     </coordinates>
@@ -52,8 +52,8 @@ chalogin</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>40</y>
+      <x>340</x>
+      <y>20</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -63,8 +63,8 @@ chalogin</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>20</y>
+      <x>570</x>
+      <y>0</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -77,8 +77,8 @@ User
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>20</y>
+      <x>800</x>
+      <y>0</y>
       <w>240</w>
       <h>70</h>
     </coordinates>
@@ -92,8 +92,8 @@ ChaloginForm(AuthenticationForm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>230</y>
+      <x>390</x>
+      <y>210</y>
       <w>150</w>
       <h>90</h>
     </coordinates>
@@ -107,8 +107,8 @@ edit_userprofile</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>260</y>
+      <x>340</x>
+      <y>240</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -118,8 +118,8 @@ edit_userprofile</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>230</y>
+      <x>570</x>
+      <y>210</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -132,8 +132,8 @@ UserProfile(models.Model)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>230</y>
+      <x>800</x>
+      <y>210</y>
       <w>240</w>
       <h>70</h>
     </coordinates>
@@ -146,8 +146,8 @@ UserProfile(forms.ModelForm)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>400</y>
+      <x>340</x>
+      <y>380</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -157,8 +157,8 @@ UserProfile(forms.ModelForm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>360</y>
+      <x>390</x>
+      <y>340</y>
       <w>150</w>
       <h>150</h>
     </coordinates>
@@ -175,8 +175,8 @@ view_detailproduct</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>550</y>
+      <x>390</x>
+      <y>530</y>
       <w>150</w>
       <h>100</h>
     </coordinates>
@@ -193,8 +193,8 @@ edit_cart
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>240</x>
-      <y>680</y>
+      <x>390</x>
+      <y>660</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -207,8 +207,8 @@ view_order</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>360</y>
+      <x>570</x>
+      <y>340</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -221,8 +221,8 @@ Product(models.Model)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>650</x>
-      <y>360</y>
+      <x>800</x>
+      <y>340</y>
       <w>240</w>
       <h>70</h>
     </coordinates>
@@ -235,8 +235,8 @@ ProductForm(forms.ModelForm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>550</y>
+      <x>570</x>
+      <y>530</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -249,8 +249,8 @@ CartItem(models.Model)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>30</x>
-      <y>630</y>
+      <x>180</x>
+      <y>610</y>
       <w>140</w>
       <h>70</h>
     </coordinates>
@@ -262,8 +262,8 @@ edit_cart
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>160</x>
-      <y>600</y>
+      <x>310</x>
+      <y>580</y>
       <w>100</w>
       <h>90</h>
     </coordinates>
@@ -273,8 +273,8 @@ edit_cart
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>420</x>
-      <y>680</y>
+      <x>570</x>
+      <y>660</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -288,8 +288,8 @@ OrderItem(models.Model)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>590</y>
+      <x>340</x>
+      <y>570</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -299,12 +299,40 @@ OrderItem(models.Model)
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>190</x>
-      <y>700</y>
+      <x>340</x>
+      <y>680</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>1000</y>
+      <w>150</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>shop</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>1000</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>帳號管理
+
+註冊:user-register.html
+
+登入:chalogin.html
+
+登出:user-logout</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

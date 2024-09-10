@@ -45,3 +45,9 @@ def chalogin(request):
         form = chaloginForm()
 
     return render(request, "user/chalogin.html", {"form": form, "message": message})
+
+
+# 登出
+def user_logout(request):
+    logout(request)
+    return redirect("chalogin")
