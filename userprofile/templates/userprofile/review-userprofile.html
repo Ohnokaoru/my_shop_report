@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}瀏覽基本資料{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>瀏覽基本資料</h1>
+</div>
+<div id="review-userprofile">
+    姓名:{{userprofile.name}} <br>
+    性別:{{userprofile.gender}} <br>
+    生日:{{userprofile.birthday}} <br>
+    信箱:{{userprofile.email}} <br>
+    電話:{{userprofile.tel}} <br>
+    地址:{{userprofile.address}} <br>
+</div>
+{% endblock %}
