@@ -23,7 +23,8 @@ body {
 #chalogin-form,
 #create-userprofile,
 #review-userprofile,
-#edit-userprofile {
+#edit-userprofile,
+#create-product {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);

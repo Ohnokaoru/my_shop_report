@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}新增商品{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>新增商品</h1>
+</div>
+
+<div id="create-product">
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="{{form.product_name.id_for_label}}">商品名稱</label> <br>
+        {{form.product_name}} <br>
+
+        <label for="{{form.product_price.id_for_label}}">商品價格</label> <br>
+        {{form.product_price}} <br>
+
+        <label for="{{form.product_stock.id_for_label}}">商品庫存</label> <br>
+        {{form.product_stock}} <br>
+
+        <label for="{{form.product_description.id_for_label}}">商品敘述</label> <br>
+        {{form.product_description}} <br>
+
+        <label for="{{form.product_img.id_for_label}}">商品圖片</label> <br>
+        {{form.product_img}} <br>
+
+        <div id="message">
+            {{message}}
+        </div>
+
+        <div id="errors">
+            {% for field in form %}
+            {% if field.errors %}
+            {% for error in field.errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+        <input type="submit" value="確定" id="submit-button">
+        <input type="reset" value="清除" id="reset-button">
+
+
+    </form>
+</div>
+
+{% endblock %}
