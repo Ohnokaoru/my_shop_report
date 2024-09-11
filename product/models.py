@@ -12,4 +12,8 @@ class Product(models.Model):
     sales_quantity = models.PositiveIntegerField()
 
     def __str__(self):
-        return f"{self.product_name} {self.product_stock} {self.sales_quantity}"
+        if not self.product_img:
+            return f"{self.product_name} 庫存:{self.product_stock} 銷售量:{self.sales_quantity} 圖片:無"
+
+        else:
+            return f"{self.product_name} 庫存:{self.product_stock} 銷售量:{self.sales_quantity} 圖片:{self.product_img.url}"
