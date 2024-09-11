@@ -25,7 +25,8 @@ body {
 #review-userprofile,
 #edit-userprofile,
 #create-product,
-#edit-product-form {
+#edit-product-form,
+#delete-product-form {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -89,7 +90,15 @@ th {
     width: 50%;
 }
 
+#review-product-table-staff {
+    width: 80%;
+}
+
 table#review-product-detail-table {
     width: 35%;
     height: 500px;
+}
+
+#delete-product-form {
+    text-align: center;
 }

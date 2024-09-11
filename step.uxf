@@ -167,8 +167,8 @@ UserProfile(forms.ModelForm)
 create_product
 review_product
 review_product_detail
-
 edit_product
+
 delete_product
 </panel_attributes>
     <additional_attributes/>
@@ -311,7 +311,7 @@ OrderItem(models.Model)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
+      <x>810</x>
       <y>1010</y>
       <w>150</w>
       <h>70</h>
@@ -319,7 +319,8 @@ OrderItem(models.Model)
     <panel_attributes>新增商品
 
 create-product.html
-</panel_attributes>
+
+bg=YELLOW</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -416,11 +417,11 @@ edit-userprofile.html</panel_attributes>
     <coordinates>
       <x>680</x>
       <y>1030</y>
-      <w>90</w>
+      <w>150</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -456,7 +457,7 @@ review-product.html</panel_attributes>
       <x>500</x>
       <y>1200</y>
       <w>190</w>
-      <h>70</h>
+      <h>100</h>
     </coordinates>
     <panel_attributes>商品內容
 
@@ -474,5 +475,57 @@ reviewproduct_detail.html
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>1160</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>修改商品內容
+
+edit-product.html
+
+bg=YELLOW</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>1190</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>1230</y>
+      <w>120</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>780</x>
+      <y>1280</y>
+      <w>190</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>刪除商品
+
+delete-product.html
+
+bg=YELLOW</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>

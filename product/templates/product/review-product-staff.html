@@ -7,14 +7,16 @@
     <h1>my_shop 商品</h1>
 </div>
 
-<table id="review-product-table">
+<table id="review-product-table-staff">
     <tr>
         <th>商品名稱</th>
         <th>商品圖片</th>
         <th>商品敘述</th>
         <th>商品價格</th>
         <th>商品庫存</th>
+        <th>商品銷售量</th>
         <th>商品修改</th>
+        <th>商品刪除</th>
     </tr>
     {% for product in page_obj %}
     <tr>
@@ -30,7 +32,9 @@
         <td> {{product.product_description|slice:"10"}}...</td>
         <td> {{product.product_price}}</td>
         <td>{{product.product_stock}}</td>
+        <td>{{product.sales_quantity}}</td>
         <td><a href="{% url 'edit-product' product.id%}">修改</a></td>
+        <td><a href="{% url 'delete-product' product.id%}">刪除</a></td>
     </tr>
     {% endfor %}
 </table>
