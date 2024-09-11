@@ -5,6 +5,7 @@ from django.core.paginator import Paginator
 from django.contrib.admin.views.decorators import staff_member_required
 from cart.forms import CartItemForm
 from cart.models import CartItem
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
@@ -59,6 +60,9 @@ def review_product(request):
 
 # 瀏覽商品內容&加入購物車
 def review_product_detail(request, product_id):
+    if not request.user.is_authenticated:
+        return redirect("chalogin")
+    
     message = ""
     # 抓取該商品資訊
     try:

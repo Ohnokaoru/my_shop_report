@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}我的購物車{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>我的購物車</h1>
+</div>
+
+<div id="review-cart">
+    {% for cartitem in cartitems%}
+    商品名稱:{{cartitem.product.product_name}} <br>
+    商品價格:{{cartitem.product.product_price}} <br>
+    商品數量:{{cartitem.quantity}} <br>
+    <br>
+    {% endfor %}
+    總計:{{total_amount}}
+
+</div>
+{% endblock %}

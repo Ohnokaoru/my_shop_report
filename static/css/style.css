@@ -27,7 +27,8 @@ body {
 #create-product,
 #edit-product-form,
 #delete-product-form,
-#add-cart-form {
+#add-cart-form,
+#review-cart {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
