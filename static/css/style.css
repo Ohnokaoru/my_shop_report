@@ -26,7 +26,8 @@ body {
 #edit-userprofile,
 #create-product,
 #edit-product-form,
-#delete-product-form {
+#delete-product-form,
+#add-cart-form {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -98,9 +99,13 @@ th {
 
 table#review-product-detail-table {
     width: 35%;
-    height: 500px;
+    height: 400px;
 }
 
-#delete-product-form {
+#delete-product-form,
+#add-cart-form {
     text-align: center;
+    width: 15%;
+    margin-top: 15px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
 }

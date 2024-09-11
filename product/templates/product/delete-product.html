@@ -9,7 +9,7 @@
 <div id="delete-product-form">
     <form action="" method="POST">
         {% csrf_token %}
-        確定刪除 {{product.product_name}}商品嗎?<br>
+        確定刪除<br> {{product.product_name}}<br>
 
 
         <input type="submit" value="確定" id="submit-button">

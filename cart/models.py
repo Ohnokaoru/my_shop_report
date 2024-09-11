@@ -9,9 +9,9 @@ from product.models import Product
 class CartItem(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
-    quantity = models.PositiveIntegerField(default=0)
+    quantity = models.PositiveIntegerField(default=1)
 
-    class Meata:
+    class Meta:
         # 使用者與同一種商品只會出現一次實體物件(之後出現同一商品會並在同一筆)
         unique_together = ("user", "product")
 

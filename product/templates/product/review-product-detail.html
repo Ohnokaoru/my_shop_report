@@ -36,12 +36,38 @@
 
 </table>
 
+<div id="add-cart-form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <label for="{{form.quantity.id_for_label}}">下單數量</label> <br>
+        {{form.quantity}}
 
-<div id="add-cart-a-button">
-    <a href="{% url 'add-cart' product.id %}">加入購物車</a>
+        <div id="errors">
+            {% for field in form %}
+            {% if field.errors %}
+            {% for error in field.errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
+
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+
+        </div>
+
+
+        <input type="submit" value="確定" id="submit-button">
+        <input type="reset" value="清除" id="reset-button">
+
+
+    </form>
 </div>
 
-<div id="message">
+<div id="message" style="text-align: center; margin-top: 10px;">
     {{ message }}
 </div>
 
