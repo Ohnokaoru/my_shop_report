@@ -15,6 +15,11 @@
         {% if request.user.is_authenticated %}
         歡迎{{request.user.username}}:
         <a href="{% url 'review-userprofile' %}">瀏覽基本資料</a>
+
+        {% if request.user.is_staff%}
+        <a href="{% url 'create-product' %}">新增商品</a>
+        {% endif %}
+
         <a href="{% url 'user-logout' %}">登出</a>
 
         {% else %}

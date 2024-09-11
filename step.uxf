@@ -315,7 +315,10 @@ OrderItem(models.Model)
       <w>150</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>shop</panel_attributes>
+    <panel_attributes>新增商品
+
+create-product.html
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -405,6 +408,31 @@ review-userprofile.html</panel_attributes>
     <panel_attributes>修改基本資料
 
 edit-userprofile.html</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>1070</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>1110</y>
+      <w>200</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>my_shop 所有商品(首頁)
+
+review-product.html
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

@@ -45,7 +45,8 @@ body {
 }
 
 #navbar a,
-#edit-a-button a {
+#edit-a-button a,
+#page-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -55,7 +56,28 @@ body {
 
 }
 
-#edit-a-button {
+#edit-a-button,
+#page-a-button {
     margin-top: 20px;
     text-align: center;
+}
+
+table {
+    margin: auto;
+    width: 60%;
+    border: solid 1px white;
+    border-collapse: collapse;
+    text-align: center;
+
+}
+
+td,
+th {
+    border: solid 1px white;
+    border-collapse: collapse;
+
+}
+
+th {
+    background-color: rgb(243, 154, 139);
 }

@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}my_shop 所有商品{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>my_shop 所有商品</h1>
+</div>
+
+<table>
+    <tr>
+        <th>商品名稱</th>
+        <th>商品圖片</th>
+        <th>商品敘述</th>
+        <th>商品價格</th>
+        <th>商品庫存</th>
+    </tr>
+    {% for product in page_obj %}
+    <tr>
+        <td>{{product.product_name}}</td>
+        <td>
+            {% if product.product_img %}
+            <img src="{{product.product_img.url}}" alt="pumpkin.png">
+            {% else %}
+            沒圖片
+            {% endif%}
+        </td>
+
+        <td> {{product.product_description|slice:"10"}}...</td>
+        <td> {{product.product_price}}</td>
+        <td>{{product.product_stock}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+<div id="page-a-button">
+    {% if page_obj.has_previous %}
+    <a href="{% url 'review-product' %}?page={{page_obj.previous_page_number}}">上一頁</a>
+    {% endif %}
+
+    <!-- 頁碼 -->
+    {% for num in page_obj.paginator.page_range %}
+    {% if num == page_obj_number%}
+    {{num}}
+    {% else %}
+    <a href="{% url 'review-product' %}?page={{num}}">{{num}}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <a href="{% url 'review-product' %}?page={{page_obj.next_page_number}}">下一頁</a>
+    {% endif %}
+</div>
+
+{% endblock %}
