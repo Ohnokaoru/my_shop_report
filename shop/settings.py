@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     "user",
     "captcha",
     "userprofile",
+    "product",
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 CAPTCHA_FONT_SIZE = 40
 CAPTCHA_IMAGE_SIZE = (150, 75)
+
+# 圖片上傳路徑
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
