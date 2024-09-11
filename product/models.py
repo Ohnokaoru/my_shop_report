@@ -9,7 +9,7 @@ class Product(models.Model):
     product_img = models.ImageField(upload_to="product_images/", null=True, blank=True)
     product_description = models.TextField(max_length=200)
     product_stock = models.PositiveIntegerField()
-    sales_quantity = models.PositiveIntegerField()
+    sales_quantity = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         if not self.product_img:

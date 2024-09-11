@@ -7,7 +7,7 @@
     <h1>my_shop 所有商品</h1>
 </div>
 
-<table>
+<table id="review-product-table">
     <tr>
         <th>商品名稱</th>
         <th>商品圖片</th>
@@ -17,7 +17,7 @@
     </tr>
     {% for product in page_obj %}
     <tr>
-        <td>{{product.product_name}}</td>
+        <td><a href="{% url 'review-product-detail' product.id %}">{{product.product_name}}</a></td>
         <td>
             {% if product.product_img %}
             <img src="{{product.product_img.url}}" alt="pumpkin.png">
@@ -40,8 +40,8 @@
 
     <!-- 頁碼 -->
     {% for num in page_obj.paginator.page_range %}
-    {% if num == page_obj.number %}
-    {{ num }}
+    {% if num == page_obj_number%}
+    {{num}}
     {% else %}
     <a href="{% url 'review-product' %}?page={{num}}">{{num}}</a>
     {% endif %}

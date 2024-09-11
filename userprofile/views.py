@@ -11,7 +11,7 @@ from .models import UserProfile
 def create_userprofile(request):
     try:
         UserProfile.objects.get(user=request.user)
-        return redirect("review-userprofile")
+        return redirect("review-product")
 
     except UserProfile.DoesNotExist:
         message = ""

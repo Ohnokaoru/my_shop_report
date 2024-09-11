@@ -31,7 +31,7 @@ def create_product(request):
     )
 
 
-# 瀏覽商品
+# 瀏覽商品(首頁)
 def review_product(request):
     produsts = Product.objects.all().order_by("id")
     if not produsts:
@@ -52,3 +52,14 @@ def review_product(request):
         templates = "product/review-product.html"
 
     return render(request, templates, {"page_obj": page_obj})
+
+
+# 瀏覽商品內容
+def review_product_detail(request, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+
+    except Product.DoesNotExist:
+        return redirect("review_product")
+
+    return render(request, "product/review-product-detail.html", {"product": product})

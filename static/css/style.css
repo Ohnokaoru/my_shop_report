@@ -64,10 +64,11 @@ body {
 
 table {
     margin: auto;
-    width: 60%;
     border: solid 1px white;
     border-collapse: collapse;
     text-align: center;
+
+
 
 }
 
@@ -80,4 +81,14 @@ th {
 
 th {
     background-color: rgb(243, 154, 139);
+}
+
+
+#review-product-table {
+    width: 50%;
+}
+
+table#review-product-detail-table {
+    width: 35%;
+    height: 500px;
 }

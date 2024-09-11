@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}my_shop 商品內容{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>商品內容</h1>
+</div>
+
+<table id="review-product-detail-table">
+    <tr>
+        <th>商品名稱</th>
+    </tr>
+    <tr>
+        <td>{{product.product_name}}</td>
+    </tr>
+    <tr>
+        <td>
+            {% if product.product_img %}
+            <img src="{{product.product_img.url}}" alt="">
+            {% else %}
+            沒有圖片
+            {% endif %}
+        </td>
+    </tr>
+    <tr>
+        <td id="product-description" style="text-align: left; height: 100px;padding-left: 8px;">
+            {{product.product_description}}</td>
+    </tr>
+    <tr>
+        <td> 價格:{{product.product_price}}</td>
+    </tr>
+    <tr>
+        <td> 庫存:{{product.product_stock}}</td>
+    </tr>
+
+</table>
+
+
+
+
+{% endblock %}

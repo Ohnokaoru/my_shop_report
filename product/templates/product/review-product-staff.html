@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title%}my_shop 所有商品{% endblock %}
+{% block title%}my_shop 商品{% endblock %}
 
 {% block content %}
 <div id="title">
-    <h1>my_shop 所有商品</h1>
+    <h1>my_shop 商品</h1>
 </div>
 
-<table>
+<table id="review-product-table">
     <tr>
         <th>商品名稱</th>
         <th>商品圖片</th>
@@ -17,10 +17,10 @@
     </tr>
     {% for product in page_obj %}
     <tr>
-        <td>{{product.product_name}}</td>
+        <td><a href="{% url 'review-product-detail' product.id %}">{{product.product_name}}</a></td>
         <td>
             {% if product.product_img %}
-            <img src="{{product.product_img.url}}" alt="pumpkin.png">
+            <img src="{{product.product_img.url}}" alt="{{product.product_name}}">
             {% else %}
             沒圖片
             {% endif%}

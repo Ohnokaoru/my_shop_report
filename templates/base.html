@@ -14,6 +14,7 @@
     <div id="navbar">
         {% if request.user.is_authenticated %}
         歡迎{{request.user.username}}:
+        <a href="{% url 'review-product' %}">首頁</a>
         <a href="{% url 'review-userprofile' %}">瀏覽基本資料</a>
 
         {% if request.user.is_staff%}
@@ -23,6 +24,7 @@
         <a href="{% url 'user-logout' %}">登出</a>
 
         {% else %}
+        <a href="{% url 'review-product' %}">首頁</a>
         <a href="{% url 'user-register' %}">註冊</a>
         <a href="{% url 'chalogin' %}">登入</a>
 
