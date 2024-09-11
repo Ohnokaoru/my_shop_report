@@ -44,10 +44,10 @@ chalogin</panel_attributes>
       <x>280</x>
       <y>20</y>
       <w>30</w>
-      <h>650</h>
+      <h>630</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;630.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;610.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -160,7 +160,7 @@ UserProfile(forms.ModelForm)
       <x>330</x>
       <y>280</y>
       <w>150</w>
-      <h>150</h>
+      <h>120</h>
     </coordinates>
     <panel_attributes>product
 --
@@ -168,7 +168,6 @@ create_product
 review_product
 review_product_detail
 edit_product
-
 delete_product
 </panel_attributes>
     <additional_attributes/>
@@ -177,14 +176,13 @@ delete_product
     <id>UMLClass</id>
     <coordinates>
       <x>330</x>
-      <y>480</y>
+      <y>450</y>
       <w>150</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>cart
 --
-add_cart
-view_cart
+review_cart
 edit_cart
 
 
@@ -195,7 +193,7 @@ edit_cart
     <id>UMLClass</id>
     <coordinates>
       <x>330</x>
-      <y>620</y>
+      <y>600</y>
       <w>150</w>
       <h>70</h>
     </coordinates>
@@ -237,7 +235,7 @@ ProductForm(forms.ModelForm)
     <id>UMLClass</id>
     <coordinates>
       <x>520</x>
-      <y>480</y>
+      <y>460</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -250,32 +248,32 @@ CartItem(models.Model)
   <element>
     <id>UMLNote</id>
     <coordinates>
-      <x>120</x>
-      <y>520</y>
-      <w>140</w>
+      <x>70</x>
+      <y>330</y>
+      <w>200</w>
       <h>70</h>
     </coordinates>
-    <panel_attributes>Note..
-edit_cart
-涵蓋刪除功能</panel_attributes>
+    <panel_attributes>Note:
+review_product_detail
+包含加入購物車功能</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>250</x>
-      <y>530</y>
-      <w>100</w>
+      <x>260</x>
+      <y>340</y>
+      <w>90</w>
       <h>50</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>80.0;10.0;10.0;30.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>520</x>
-      <y>620</y>
+      <y>600</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -290,7 +288,7 @@ OrderItem(models.Model)
     <id>Relation</id>
     <coordinates>
       <x>280</x>
-      <y>520</y>
+      <y>490</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -301,7 +299,7 @@ OrderItem(models.Model)
     <id>Relation</id>
     <coordinates>
       <x>280</x>
-      <y>640</y>
+      <y>620</y>
       <w>70</w>
       <h>30</h>
     </coordinates>
@@ -444,7 +442,7 @@ review-product.html</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>570</x>
-      <y>1190</y>
+      <y>1170</y>
       <w>30</w>
       <h>30</h>
     </coordinates>
@@ -455,7 +453,7 @@ review-product.html</panel_attributes>
     <id>UMLClass</id>
     <coordinates>
       <x>500</x>
-      <y>1200</y>
+      <y>1180</y>
       <w>190</w>
       <h>100</h>
     </coordinates>
@@ -471,16 +469,16 @@ reviewproduct_detail.html
       <x>580</x>
       <y>1140</y>
       <w>30</w>
-      <h>80</h>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>1160</y>
+      <x>770</x>
+      <y>1130</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -495,29 +493,29 @@ bg=YELLOW</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>680</x>
-      <y>1190</y>
-      <w>120</w>
-      <h>70</h>
+      <y>1160</y>
+      <w>110</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;50.0</additional_attributes>
+    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>680</x>
-      <y>1230</y>
-      <w>120</w>
-      <h>100</h>
+      <y>1210</y>
+      <w>110</w>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>100.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>90.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>780</x>
-      <y>1280</y>
+      <x>770</x>
+      <y>1230</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -526,6 +524,55 @@ bg=YELLOW</panel_attributes>
 delete-product.html
 
 bg=YELLOW</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>1070</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>1270</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>500</x>
+      <y>1310</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>加入購物車
+
+add-cart.html
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>120</x>
+      <y>480</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Note..
+edit_cart
+涵蓋刪除功能</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
