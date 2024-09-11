@@ -14,7 +14,8 @@ def create_product(request):
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             productform = form.save(commit=False)
-            productform.sales_quantity = 0
+            # 不需要顯式設置sales_quantity，default為 0
+            # productform.sales_quantity = 0
 
             print(f"productform.product_img.path")
             productform.save()
@@ -60,6 +61,34 @@ def review_product_detail(request, product_id):
         product = Product.objects.get(id=product_id)
 
     except Product.DoesNotExist:
-        return redirect("review_product")
+        return redirect("review-product")
 
     return render(request, "product/review-product-detail.html", {"product": product})
+
+
+# 修改內容
+@staff_member_required
+def edit_product(request, product_id):
+    message = ""
+    try:
+        product = Product.objects.get(id=product_id)
+
+    except Product.DoesNotExist:
+        return redirect("review-product")
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, instance=product)
+
+        if form.is_valid():
+            # 因為sales_quantity不是手動運算而是藉由訂單成立時增加的
+            form.save()
+            return redirect("review-product-detail", product_id=product_id)
+
+        else:
+            message = "資料錯誤"
+    else:
+        form = ProductForm(instance=product)
+
+    return render(
+        request, "product/edit-product.html", {"message": message, "form": form}
+    )

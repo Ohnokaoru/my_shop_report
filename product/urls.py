@@ -10,4 +10,9 @@ urlpatterns = [
         views.review_product_detail,
         name="review-product-detail",
     ),
+    path(
+        "edit-product/<int:product_id>/",
+        views.edit_product,
+        name="edit-product",
+    ),
 ]

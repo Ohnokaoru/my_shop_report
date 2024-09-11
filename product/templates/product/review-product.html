@@ -1,10 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title%}my_shop 所有商品{% endblock %}
+{% block title%}my_shop 商品{% endblock %}
 
 {% block content %}
 <div id="title">
-    <h1>my_shop 所有商品</h1>
+    <h1>my_shop 商品</h1>
 </div>
 
 <table id="review-product-table">
@@ -40,7 +40,7 @@
 
     <!-- 頁碼 -->
     {% for num in page_obj.paginator.page_range %}
-    {% if num == page_obj_number%}
+    {% if num == page_obj.number%}
     {{num}}
     {% else %}
     <a href="{% url 'review-product' %}?page={{num}}">{{num}}</a>

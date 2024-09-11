@@ -24,7 +24,8 @@ body {
 #create-userprofile,
 #review-userprofile,
 #edit-userprofile,
-#create-product {
+#create-product,
+#edit-product-form {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);

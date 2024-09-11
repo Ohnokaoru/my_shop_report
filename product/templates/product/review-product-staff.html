@@ -14,6 +14,7 @@
         <th>商品敘述</th>
         <th>商品價格</th>
         <th>商品庫存</th>
+        <th>商品修改</th>
     </tr>
     {% for product in page_obj %}
     <tr>
@@ -29,6 +30,7 @@
         <td> {{product.product_description|slice:"10"}}...</td>
         <td> {{product.product_price}}</td>
         <td>{{product.product_stock}}</td>
+        <td><a href="{% url 'edit-product' product.id%}">修改</a></td>
     </tr>
     {% endfor %}
 </table>
@@ -40,7 +42,7 @@
 
     <!-- 頁碼 -->
     {% for num in page_obj.paginator.page_range %}
-    {% if num == page_obj_number%}
+    {% if num == page_obj.number%}
     {{num}}
     {% else %}
     <a href="{% url 'review-product' %}?page={{num}}">{{num}}</a>
