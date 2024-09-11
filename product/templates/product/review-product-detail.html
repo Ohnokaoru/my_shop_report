@@ -37,6 +37,12 @@
 </table>
 
 
+<div id="add-cart-a-button">
+    <a href="{% url 'add-cart' product.id %}">加入購物車</a>
+</div>
 
+<div id="message">
+    {{ message }}
+</div>
 
 {% endblock %}

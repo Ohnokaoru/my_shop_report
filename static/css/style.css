@@ -48,7 +48,8 @@ body {
 
 #navbar a,
 #edit-a-button a,
-#page-a-button a {
+#page-a-button a,
+#add-cart-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -59,7 +60,8 @@ body {
 }
 
 #edit-a-button,
-#page-a-button {
+#page-a-button,
+#add-cart-a-button {
     margin-top: 20px;
     text-align: center;
 }

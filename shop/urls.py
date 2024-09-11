@@ -26,6 +26,7 @@ urlpatterns = [
     path("captcha/", include("captcha.urls")),
     path("", include("userprofile.urls")),
     path("", include("product.urls")),
+    path("", include("cart.urls")),
 ]
 
 # 開發時內建伺服器服務媒體文件(會經常更動)，(部屬後則交給server)

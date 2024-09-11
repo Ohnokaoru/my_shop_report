@@ -57,13 +57,18 @@ def review_product(request):
 
 # 瀏覽商品內容
 def review_product_detail(request, product_id):
+    message = ""
     try:
         product = Product.objects.get(id=product_id)
 
     except Product.DoesNotExist:
         return redirect("review-product")
 
-    return render(request, "product/review-product-detail.html", {"product": product})
+    return render(
+        request,
+        "product/review-product-detail.html",
+        {"product": product, "message": message},
+    )
 
 
 # 修改內容
@@ -95,9 +100,7 @@ def edit_product(request, product_id):
 
 
 # 刪除商品
-staff_member_required
-
-
+@staff_member_required
 def delete_product(request, product_id):
     try:
         product = Product.objects.get(id=product_id)

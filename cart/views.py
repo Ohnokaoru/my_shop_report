@@ -2,13 +2,14 @@ from django.shortcuts import render, redirect
 from .forms import CartItemForm
 from .models import CartItem
 from product.models import Product
+from django.contrib import messages
 
 # Create your views here.
 
 
 # 新增購物車
 def add_cart(request, product_id):
-    message - ""
+    message = ""
     # 抓product資料
     try:
         product = Product.objects.get(id=product_id)
@@ -19,11 +20,20 @@ def add_cart(request, product_id):
         form = CartItemForm(request.POST)
 
         if form.is_valid():
-            cartitemform = form.save(commit=False)
-            cartitemform.product = product
-            cartitemform.user = request.user
-            cartitemform.save()
-            message = "新增成功"
+            # 抓取欄位
+            quantity = form.cleaned_data("quantity")
+            if product.product_stock < quantity:
+                message = f"庫存不足，最大庫存量為{product.product_stock}"
+            else:
+                cartitemform = form.save(commit=False)
+                cartitemform.product = product
+                cartitemform.user = request.user
+                cartitemform.save()
+                message = "商品已成功加入購物車"
+
+                # 更新庫存(因product為某一商品的實體物件，擁有該實體物件的所有內容，並可以做運算)
+                product.product_stock -= quantity
+                product.save()
 
         else:
             message = "資料錯誤"
@@ -31,4 +41,4 @@ def add_cart(request, product_id):
     else:
         form = CartItemForm()
 
-    return render(request, "cart/add-cart.html", {"form": form, "message": message})
+    return redirect("review-product")
