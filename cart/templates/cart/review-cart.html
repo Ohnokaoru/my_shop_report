@@ -13,28 +13,43 @@
 
 
         <tr>
-            <td>商品名稱:{{cartitem.product.product_name}} </td>
-            <td rowspan="3">
-                <div id="review-cart-a-button">
-                    <a href="{% url 'edit-cart' cartitem.product.id %}">修改商品數量</a>
+            <td>商品名稱:
+                <a href="{% url 'review-product-detail' cartitem.product.id %}">{{cartitem.product.product_name}}</a>
+            </td>
+            <td rowspan="2">
+                <div id="delete-a-cartitem-button">
+                    <a href="{% url 'delete-cartitem' cartitem.product.id %}">刪除</a>
                 </div>
+            </td>
         </tr>
 
         <tr>
             <td>商品價格:{{cartitem.product.product_price}}</td>
-            <td></td>
+
         </tr>
 
         <tr>
             <td>商品數量:{{cartitem.quantity}}</td>
+            <td rowspan="2">
+                <div id="edit-cart-a-button">
+                    <a href="{% url 'edit-cartitem' cartitem.product.id %}">修改數量</a>
+                </div>
+            </td>
         </tr>
 
         <tr>
             <td><br></td>
+
+        </tr>
+        <tr>
+            <td colspan="2">
+                <hr>
+            </td>
+
         </tr>
         {% endfor %}
         <tr>
-            <td colspan="2"> 總計:{{total_amount}}</td>
+            <td colspan="2"> 總金額:{{total_amount}}</td>
         </tr>
 
     </table>

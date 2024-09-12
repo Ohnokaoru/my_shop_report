@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 # 新增商品
+@staff_member_required
 def create_product(request):
     message = ""
     if request.method == "POST":

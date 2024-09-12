@@ -50,11 +50,13 @@ body {
 
 }
 
+#delete-a-cartitem-button a,
 #navbar a,
 #edit-a-button a,
 #page-a-button a,
 #add-cart-a-button a,
-#review-cart-a-button a {
+#review-cart-a-button a,
+#edit-cart-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -66,7 +68,8 @@ body {
 
 #edit-a-button,
 #page-a-button,
-#add-cart-a-button {
+#add-cart-a-button,
+#review-cart-a-button {
     margin-top: 20px;
     text-align: center;
 }
@@ -118,8 +121,5 @@ table#review-cart-table td,
 table#review-cart-table {
     border: none;
     text-align: left;
-}
 
-#review-cart-a-button {
-    text-align: center;
 }

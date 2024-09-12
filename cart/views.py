@@ -33,7 +33,7 @@ def review_cart(request):
 
 # 修改購物車
 @login_required
-def edit_cart(request, product_id):
+def edit_cartitem(request, product_id):
     message = ""
     try:
         product = Product.objects.get(id=product_id)
@@ -71,6 +71,23 @@ def edit_cart(request, product_id):
 
     return render(
         request,
-        "cart/edit-cart.html",
+        "cart/edit-cartitem.html",
         {"cartitem": cartitem, "form": form, "message": message},
     )
+
+
+# 刪除購物車項目
+@login_required
+def delete_cartitem(request, product_id):
+    try:
+        product = Product.objects.get(id=product_id)
+    except Product.DoesNotExist:
+        return redirect("review-cart")
+
+    try:
+        cartitem = CartItem.objects.get(user=request.user, product=product)
+    except CartItem.DoesNotExist:
+        return redirect("review-cart")
+
+    cartitem.delete()
+    return redirect("review-cart")
