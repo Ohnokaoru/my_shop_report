@@ -62,7 +62,7 @@ def review_product(request):
 def review_product_detail(request, product_id):
     if not request.user.is_authenticated:
         return redirect("chalogin")
-    
+
     message = ""
     # 抓取該商品資訊
     try:
@@ -97,10 +97,6 @@ def review_product_detail(request, product_id):
                     cartitemform.user = request.user
                     cartitemform.save()
                     message = "商品已成功加入購物車"
-
-                # 更新庫存(因product為某一商品的實體物件，擁有該實體物件的所有內容，並可以做運算)
-                product.product_stock -= quantity
-                product.save()
 
         else:
             message = "資料錯誤"

@@ -184,6 +184,7 @@ delete_product
 --
 review_cart
 edit_cart
+clear_cart
 
 
 </panel_attributes>
@@ -234,8 +235,8 @@ ProductForm(forms.ModelForm)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>520</x>
-      <y>460</y>
+      <x>510</x>
+      <y>450</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -381,7 +382,7 @@ create-userprofile.html</panel_attributes>
       <w>160</w>
       <h>80</h>
     </coordinates>
-    <panel_attributes>瀏覽基本資料
+    <panel_attributes>檢視基本資料
 
 review-userprofile.html</panel_attributes>
     <additional_attributes/>
@@ -457,7 +458,7 @@ review-product.html</panel_attributes>
       <w>190</w>
       <h>100</h>
     </coordinates>
-    <panel_attributes>商品內容
+    <panel_attributes>商品內容(包含加入購物車)
 
 reviewproduct_detail.html
 </panel_attributes>
@@ -554,11 +555,11 @@ bg=YELLOW</panel_attributes>
       <x>500</x>
       <y>1310</y>
       <w>190</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
-    <panel_attributes>加入購物車
+    <panel_attributes>檢視購物車
 
-add-cart.html
+review-cart.html
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -573,6 +574,20 @@ add-cart.html
     <panel_attributes>Note..
 edit_cart
 涵蓋刪除功能</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>450</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>form
+--
+CartItemForm(forms.ModelForm)
+</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
