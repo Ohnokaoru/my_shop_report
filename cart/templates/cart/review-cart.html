@@ -8,13 +8,46 @@
 </div>
 
 <div id="review-cart">
-    {% for cartitem in cartitems%}
-    商品名稱:{{cartitem.product.product_name}} <br>
-    商品價格:{{cartitem.product.product_price}} <br>
-    商品數量:{{cartitem.quantity}} <br>
-    <br>
-    {% endfor %}
-    總計:{{total_amount}}
+    <table id="review-cart-table">
+        {% for cartitem in cartitems%}
+        <tr>
+            <td>購物車id:{{cartitem.id}}</td>
+            <td rowspan="5">
+                <div id="review-cart-a-button">
+                    <a href="{% url 'edit-cart' cartitem.product.id %}">修改商品數量</a>
+                </div>
+            </td>
+        </tr>
 
+        <tr>
+            <td>商品id:{{cartitem.product.id}}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>商品名稱:{{cartitem.product.product_name}} </td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>商品價格:{{cartitem.product.product_price}}</td>
+            <td></td>
+        </tr>
+
+        <tr>
+            <td>商品數量:{{cartitem.quantity}}</td>
+        </tr>
+
+        <tr>
+            <td><br></td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td colspan="2"> 總計:{{total_amount}}</td>
+        </tr>
+
+    </table>
 </div>
+
+
 {% endblock %}
