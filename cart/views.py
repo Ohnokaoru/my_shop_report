@@ -36,6 +36,7 @@ def review_cart(request):
 def edit_cart(request, product_id):
     message = ""
 
+    product = Product.objects.get(id=product_id)
     cartitem = CartItem.objects.get(user=request.user, product__id=product_id)
 
     if request.method == "POST":
@@ -44,15 +45,21 @@ def edit_cart(request, product_id):
         if form.is_valid():
             quantity = form.cleaned_data.get("quantity")
             if quantity > cartitem.product.product_stock:
-                message = f"數量大於庫存，目前庫存量為:{cartitem.product.product_stock}"
+                message = f"目前庫存量:{cartitem.product.product_stock}，你的商品數量大於庫存，請設定有效商品數量"
 
-            form.save()
-            message = "更新成功"
+            else:
+                cartitemform = form.save(commit=False)
+                cartitemform.quantity = quantity
+                cartitemform.user = request.user
+                cartitemform.product = product
+
+                form.save()
+                message = "更新成功"
     else:
         form = CartItemForm(instance=cartitem)
 
     return render(
         request,
         "cart/edit-cart.html",
-        {"cartitems": cartitem, "form": form, "message": message},
+        {"cartitem": cartitem, "form": form, "message": message},
     )

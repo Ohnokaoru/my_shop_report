@@ -28,7 +28,8 @@ body {
 #edit-product-form,
 #delete-product-form,
 #add-cart-form,
-#review-cart {
+#review-cart,
+#edit-cart-form {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -36,7 +37,8 @@ body {
     border-radius: 10px;
 }
 
-#chalogin-form {
+#chalogin-form,
+#edit-cart-form {
     width: 20%;
 }
 

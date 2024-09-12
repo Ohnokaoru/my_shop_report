@@ -7,41 +7,43 @@
     <h1>我的購物車</h1>
 </div>
 
-<form action="" method="POST">
-    {% csrf_token %}
-    商品名稱:{{cartitem.product.product_name}} <br>
+<div id="edit-cart-form">
+    <form action="" method="POST">
+        {% csrf_token %}
+        商品名稱:{{cartitem.product.product_name}} <br>
 
-    <label for="{{form.quantity.id_for_label}}">變更數量:</label>
-    {{form.quantity}}
+        <label for="{{form.quantity.id_for_label}}">變更數量</label><br>
+        {{form.quantity}}
 
-    <div id="message">
-        {{message}}
-    </div>
+        <div id="message">
+            {{message}}
+        </div>
 
-    <div id="errors">
-        {% for field in form %}
-        {% if field.errors %}
-        {% for error in field.errors %}
-        {{error}} <br>
-        {% endfor %}
-        {% endif %}
-        {% endfor %}
+        <div id="errors">
+            {% for field in form %}
+            {% if field.errors %}
+            {% for error in field.errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
+            {% endfor %}
 
-        {% if form.non_field_errors %}
-        {% for error in form.non_field_errors %}
-        {{error}} <br>
-        {% endfor %}
-        {% endif %}
+            {% if form.non_field_errors %}
+            {% for error in form.non_field_errors %}
+            {{error}} <br>
+            {% endfor %}
+            {% endif %}
 
-    </div>
+        </div>
 
-    <input type="submit" value="確定" id="submit-button"> <br>
+        <input type="submit" value="確定" id="submit-button"> <br>
+    </form>
+</div>
+
+<div id="review-cart-a-button">
+    <a href="{% url 'review-cart' %}">檢視購物車</a>
+</div>
 
 
-    <div id="review-cart-a-button">
-        <a href="{% url 'review-cart' %}">檢視購物車</a>
-    </div>
-
-</form>
 
 {% endblock %}

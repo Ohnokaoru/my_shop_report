@@ -10,23 +10,14 @@
 <div id="review-cart">
     <table id="review-cart-table">
         {% for cartitem in cartitems%}
-        <tr>
-            <td>購物車id:{{cartitem.id}}</td>
-            <td rowspan="5">
-                <div id="review-cart-a-button">
-                    <a href="{% url 'edit-cart' cartitem.product.id %}">修改商品數量</a>
-                </div>
-            </td>
-        </tr>
 
-        <tr>
-            <td>商品id:{{cartitem.product.id}}</td>
-            <td></td>
-        </tr>
 
         <tr>
             <td>商品名稱:{{cartitem.product.product_name}} </td>
-            <td></td>
+            <td rowspan="3">
+                <div id="review-cart-a-button">
+                    <a href="{% url 'edit-cart' cartitem.product.id %}">修改商品數量</a>
+                </div>
         </tr>
 
         <tr>
