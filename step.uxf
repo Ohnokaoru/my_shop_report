@@ -699,4 +699,31 @@ edit-cartitem.html
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
   </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>680</x>
+      <y>600</y>
+      <w>240</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>form
+--
+OrderForm(forms.ModelForm)
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>970</x>
+      <y>1010</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>確認訂單資訊
+
+confirm-order.html</panel_attributes>
+    <additional_attributes/>
+  </element>
 </diagram>

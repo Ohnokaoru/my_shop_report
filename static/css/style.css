@@ -29,7 +29,8 @@ body {
 #delete-product-form,
 #add-cart-form,
 #review-cart,
-#edit-cart-form {
+#edit-cart-form,
+#confirm-order-form {
     width: 30%;
     margin: auto;
     background-color: rgb(243, 154, 139);
@@ -57,7 +58,8 @@ body {
 #add-cart-a-button a,
 #review-cart-a-button a,
 #edit-cart-a-button a,
-#clear-a-button a {
+#clear-a-button a,
+#confirm-order-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -71,7 +73,8 @@ body {
 #page-a-button,
 #add-cart-a-button,
 #review-cart-a-button,
-#clear-a-button {
+#clear-a-button,
+#confirm-order-a-button {
     margin-top: 20px;
     text-align: center;
 }
