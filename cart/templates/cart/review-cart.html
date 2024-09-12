@@ -7,11 +7,14 @@
     <h1>我的購物車</h1>
 </div>
 
+<div id="clear-a-button" style="margin-bottom: 15px;">
+    <a href="{% url 'clear-cartitem' %}">清空購物車</a>
+</div>
+
 <div id="review-cart">
     <table id="review-cart-table">
+
         {% for cartitem in cartitems%}
-
-
         <tr>
             <td>商品名稱:
                 <a href="{% url 'review-product-detail' cartitem.product.id %}">{{cartitem.product.product_name}}</a>
@@ -53,6 +56,7 @@
         </tr>
 
     </table>
+
 </div>
 
 

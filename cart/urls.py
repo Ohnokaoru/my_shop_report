@@ -9,4 +9,5 @@ urlpatterns = [
         views.delete_cartitem,
         name="delete-cartitem",
     ),
+    path("clear-cartitem/", views.clear_cartitem, name="clear-cartitem"),
 ]

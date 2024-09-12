@@ -91,3 +91,11 @@ def delete_cartitem(request, product_id):
 
     cartitem.delete()
     return redirect("review-cart")
+
+
+# 清除購物車
+def clear_cartitem(request):
+    cartitems = CartItem.objects.filter(user=request.user)
+    cartitems.delete()
+
+    return redirect("review-product")

@@ -56,7 +56,8 @@ body {
 #page-a-button a,
 #add-cart-a-button a,
 #review-cart-a-button a,
-#edit-cart-a-button a {
+#edit-cart-a-button a,
+#clear-a-button a {
     background-color: aliceblue;
     margin-left: 10px;
     text-decoration: none;
@@ -69,7 +70,8 @@ body {
 #edit-a-button,
 #page-a-button,
 #add-cart-a-button,
-#review-cart-a-button {
+#review-cart-a-button,
+#clear-a-button {
     margin-top: 20px;
     text-align: center;
 }
