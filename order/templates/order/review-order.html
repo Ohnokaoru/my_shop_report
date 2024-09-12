@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}我的歷史訂單{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>我的歷史訂單</h1>
+</div>
+
+
+{% for order in orders%}
+訂單編號:{{order.id}} <br>
+付款:{{order.status}} <br>
+下單時間:{{order.status}} <br>
+送貨地址:{{order.shipping_address}} <br>
+
+{% for orderitem in orderitems %}
+商品名稱:{{orderitem.product.product_name}} <br>
+數量:{{orderitem.quantity}} <br>
+價格:{{orderitem.order_price}} <br>
+<br>
+
+{% endfor %}
+<hr>
+{% endfor %}
+
+
+
+
+{% endblock %}

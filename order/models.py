@@ -10,6 +10,7 @@ class Order(models.Model):
     status = models.BooleanField(default=False)
     order_time = models.DateTimeField(auto_now_add=True)
     shipping_address = models.CharField(max_length=50)
+    total_amount = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return f"{self.user.username} {self.shipping_address}"

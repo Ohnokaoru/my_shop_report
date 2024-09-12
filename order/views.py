@@ -16,9 +16,9 @@ def confirm_order(request):
     cartitems = CartItem.objects.filter(user=request.user)
 
     # 計算總金額
-    total_money = 0
+    total_amount = 0
     for cartitem in cartitems:
-        total_money += cartitem.quantity * cartitem.product.product_price
+        total_amount += cartitem.quantity * cartitem.product.product_price
 
     if not cartitems:
         return redirect("review-product")
@@ -29,6 +29,7 @@ def confirm_order(request):
         if form.is_valid():
             orderform = form.save(commit=False)
             orderform.user = request.user
+            orderform.total_amount = total_amount
             orderform.save()
 
             for cartitem in cartitems:
@@ -40,12 +41,10 @@ def confirm_order(request):
                     order_price=cartitem.product.product_price,
                 )
 
-                # 更新庫存&# 更新銷售量
+                # 更新庫存&更新銷售量
                 cartitem.product.product_stock -= cartitem.quantity
                 cartitem.product.sales_quantity += cartitem.quantity
                 cartitem.product.save()
-
-                cartitem.product
 
             message = "建立完成"
 
@@ -66,11 +65,28 @@ def confirm_order(request):
             "cartitems": cartitems,
             "message": message,
             "form": form,
-            "total_money": total_money,
+            "total_amount": total_amount,
         },
     )
 
 
 # 查看訂單
+@login_required
 def review_order(request):
-    OrderItem.objects.all().order_by("-order_time")
+    message = ""
+    orders = Order.objects.filter(user=request.user).order_by("-order_time")
+    if not orders:
+        message = "沒有下單紀錄"
+
+    for order in orders:
+        orderitems = OrderItem.objects.filter(order=order)
+
+    return render(
+        request,
+        "order/review-order.html",
+        {
+            "message": message,
+            "orders": orders,
+            "orderitems": orderitems,
+        },
+    )

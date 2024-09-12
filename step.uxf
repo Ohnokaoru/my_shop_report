@@ -202,7 +202,7 @@ clear_cartitem
     <panel_attributes>order
 --
 confirm_order
-view_order</panel_attributes>
+review_order</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -601,7 +601,7 @@ CartItemForm(forms.ModelForm)
     </coordinates>
     <panel_attributes>刪除購物車商品項目
 
-delete-cartitem.html
+delete-cartitem
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -637,7 +637,7 @@ delete-cartitem.html
     </coordinates>
     <panel_attributes>清空購物車
 
-clear-cartitem.html
+clear-cartitem
 </panel_attributes>
     <additional_attributes/>
   </element>
@@ -724,6 +724,30 @@ OrderForm(forms.ModelForm)
     <panel_attributes>確認訂單資訊
 
 confirm-order.html</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>1080</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>970</x>
+      <y>1140</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>檢視訂單資訊
+
+review-order.html</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>

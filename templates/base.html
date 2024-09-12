@@ -17,6 +17,7 @@
         <a href="{% url 'review-product' %}">首頁</a>
         <a href="{% url 'review-userprofile' %}">瀏覽基本資料</a>
         <a href="{% url 'review-cart' %}">檢視購物車</a>
+        <a href="{% url 'review-order' %}">歷史訂單</a>
 
         {% if request.user.is_staff%}
         <a href="{% url 'create-product' %}">新增商品</a>
