@@ -66,8 +66,7 @@ body {
 
 #edit-a-button,
 #page-a-button,
-#add-cart-a-button,
-#review-cart-a-button {
+#add-cart-a-button {
     margin-top: 20px;
     text-align: center;
 }
@@ -119,4 +118,8 @@ table#review-cart-table td,
 table#review-cart-table {
     border: none;
     text-align: left;
+}
+
+#review-cart-a-button {
+    text-align: center;
 }

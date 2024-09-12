@@ -22,7 +22,7 @@ def review_cart(request):
         print(total_amount)
 
     if not cartitems:
-        return redirect("review_product")
+        return redirect("review-product")
 
     return render(
         request,
@@ -31,13 +31,20 @@ def review_cart(request):
     )
 
 
-# # 修改購物車
+# 修改購物車
 @login_required
 def edit_cart(request, product_id):
     message = ""
+    try:
+        product = Product.objects.get(id=product_id)
 
-    product = Product.objects.get(id=product_id)
-    cartitem = CartItem.objects.get(user=request.user, product__id=product_id)
+    except Product.DoesNotExist:
+        return redirect("review-product")
+    try:
+        cartitem = CartItem.objects.get(user=request.user, product=product)
+
+    except CartItem.DoesNotExist:
+        return redirect("review-product")
 
     if request.method == "POST":
         form = CartItemForm(request.POST, instance=cartitem)
@@ -47,14 +54,18 @@ def edit_cart(request, product_id):
             if quantity > cartitem.product.product_stock:
                 message = f"目前庫存量:{cartitem.product.product_stock}，你的商品數量大於庫存，請設定有效商品數量"
 
+            elif quantity == 0:
+                cartitem.delete()
+                return redirect("review-cart")
+
             else:
                 cartitemform = form.save(commit=False)
-                cartitemform.quantity = quantity
                 cartitemform.user = request.user
                 cartitemform.product = product
 
-                form.save()
+                cartitemform.save()
                 message = "更新成功"
+
     else:
         form = CartItemForm(instance=cartitem)
 
