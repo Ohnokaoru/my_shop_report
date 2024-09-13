@@ -4,6 +4,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Order, OrderItem
 from .forms import OrderForm
 from django.core.paginator import Paginator
+from django.contrib.admin.views.decorators import staff_member_required
+from product.models import Product
 
 # Create your views here.
 
@@ -106,3 +108,13 @@ def review_order_detail(request, order_id):
     orderitems = OrderItem.objects.filter(order=order)
 
     return render(request, "order/review-order-detail.html", {"orderitems": orderitems})
+
+
+# 繪製銷售量
+@staff_member_required
+def sales_quantity_barchart(request):
+    orderitems = OrderItem.objects.all()
+
+    return render(
+        request, "order/sales-quantity-barchart.html", {"orderitems": orderitems}
+    )

@@ -9,4 +9,9 @@ urlpatterns = [
         views.review_order_detail,
         name="review-order-detail",
     ),
+    path(
+        "sales-quantity-barchart/",
+        views.sales_quantity_barchart,
+        name="sales-quantity-barchart",
+    ),
 ]
