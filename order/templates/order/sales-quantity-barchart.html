@@ -10,14 +10,14 @@
 <div class="container">
     <div class="row my-3">
         <div class="col">
-            <h4>商品銷售量</h4>
+            <h4>商品銷售量(總共)</h4>
         </div>
     </div>
     <div class="row my-2">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <canvas id="chBar" height="100"></canvas>
+                    <canvas id="chBar1" height="100"></canvas>
                 </div>
             </div>
         </div>
@@ -25,34 +25,31 @@
 </div>
 
 <script>
-    // chart.js chart examples
+
+    // 將Django dict轉成 js obj
+    var productSales = {{ product_sales| safe }};
+
+    var labels = Object.keys(productSales);
+    var data = Object.values(productSales);
 
     // chart colors
-    var colors = ['#007bff', '#7EACB5', '#28a745', '#D2E0FB', '#444444', '#c3e6cb', '#dc3545', '#6c757d'];
+    var colors = ['#7695FF', '#7EACB5', '#E8B86D', '#D2E0FB', '#CB80AB', '#c3e6cb', '#FF885B', '#6c757d'];
 
     var chBar = document.getElementById("chBar");
     var chartData = {
-        labels: ["S", "M", "T", "W", "T", "F", "S"],
+        labels:
+            labels
+        ,
         datasets: [{
-            data: [589, 445, 483, 503, 689, 692, 634],
-            backgroundColor: colors[0]
+            data: data,
+            // 將顏色一一分配，超過顏色會重複，不夠就照順序分配
+            backgroundColor: colors.slice(0, labels.length)
         },
-        {
-            data: [209, 245, 383, 403, 589, 692, 580],
-            backgroundColor: colors[1]
-        },
-        {
-            data: [489, 135, 483, 290, 189, 603, 600],
-            backgroundColor: colors[2]
-        },
-        {
-            data: [639, 465, 493, 478, 589, 632, 674],
-            backgroundColor: colors[4]
-        }]
+        ]
     };
 
-    if (chBar) {
-        new Chart(chBar, {
+    if (chBar1) {
+        new Chart(chBar1, {
             type: 'bar',
             data: chartData,
             options: {
@@ -61,11 +58,18 @@
                         barPercentage: 0.4,
                         categoryPercentage: 0.5
                     },
+
+
                     y: {
                         ticks: {
                             beginAtZero: false
+                        },
+                        title: {
+                            display: true,
+                            text: '數量'
                         }
                     }
+
                 },
                 plugins: {
                     legend: {
@@ -76,4 +80,9 @@
         });
     }
 </script>
+
+<div class="span" style="margin: auto;text-align: center;font-size: larger;">總銷售金額:{{total}}
+</div>
+
+
 {% endblock %}

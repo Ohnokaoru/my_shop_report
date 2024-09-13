@@ -25,6 +25,7 @@
 
         {% if request.user.is_staff%}
         <a href="{% url 'create-product' %}">新增商品</a>
+        <a href="{% url 'sales-quantity-barchart' %}">銷售圖表</a>
         {% endif %}
 
         <a href="{% url 'user-logout' %}">登出</a>

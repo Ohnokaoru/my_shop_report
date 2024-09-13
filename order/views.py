@@ -115,6 +115,25 @@ def review_order_detail(request, order_id):
 def sales_quantity_barchart(request):
     orderitems = OrderItem.objects.all()
 
+    # 取銷售總量
+    product_sales = {}
+    total = 0
+    for orderitem in orderitems:
+        product_name = orderitem.product.product_name
+        quantity = orderitem.quantity
+        order_price = orderitem.order_price
+
+        if product_name in product_sales:
+            product_sales[product_name] += quantity
+
+        else:
+            product_sales[product_name] = quantity
+
+        order_price = orderitem.order_price
+        total += order_price * quantity
+
     return render(
-        request, "order/sales-quantity-barchart.html", {"orderitems": orderitems}
+        request,
+        "order/sales-quantity-barchart.html",
+        {"orderitems": orderitems, "product_sales": product_sales, "total": total},
     )
