@@ -196,14 +196,15 @@ clear_cartitem
     <coordinates>
       <x>260</x>
       <y>600</y>
-      <w>150</w>
+      <w>170</w>
       <h>100</h>
     </coordinates>
     <panel_attributes>order
 --
 confirm_order
 review_order
-review_order_detail</panel_attributes>
+review_order_detail
+sales_quantity_barchart</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -620,7 +621,7 @@ delete-cartitem
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
+      <x>550</x>
       <y>1360</y>
       <w>40</w>
       <h>100</h>
@@ -647,17 +648,17 @@ clear-cartitem
     <coordinates>
       <x>610</x>
       <y>1330</y>
-      <w>110</w>
-      <h>80</h>
+      <w>130</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90.0;60.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>1360</y>
+      <x>720</x>
+      <y>1340</y>
       <w>150</w>
       <h>80</h>
     </coordinates>
@@ -763,5 +764,62 @@ review-order.html</panel_attributes>
 
 review-order.html</panel_attributes>
     <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>730</x>
+      <y>1480</y>
+      <w>220</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>銷收量圖表
+
+sales-quantity-barchart.html</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>1210</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>590</x>
+      <y>1340</y>
+      <w>200</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>180.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>960</x>
+      <y>1380</y>
+      <w>160</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes/>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1030</x>
+      <y>1330</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
