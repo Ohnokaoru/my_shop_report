@@ -6,25 +6,48 @@
 <div id="title">
     <h1>我的歷史訂單</h1>
 </div>
+<div id="review-order">
+    {% for order in page_obj %}
+    <div class="span" style="font-weight: 700;">
+        訂單編號:{{order.id}} <br>
+    </div>
+    付款(目前只有到貨付款服務):
+    {% if order.status %}
+    {% else %}
+    未付款
+    {% endif %}<br>
+    下單時間:{{order.order_time}} <br>
+    送貨地址:{{order.shipping_address}} <br>
+    總金額:{{order.total_amount}} <br>
+    <div id="review-order-a-button">
+        <a href="{% url 'review-order-detail' order.id %}">訂單詳細內容</a>
+    </div>
+    <hr>
 
+    {% endfor %}
+</div>
+<div id="page-a-button">
+    {% if page_obj.has_previous %}
+    <a href="{% url 'review-order' %}?page={{page_obj.previes_page_number}}">上一頁</a>
+    {% endif %}
 
-{% for order in orders%}
-訂單編號:{{order.id}} <br>
-付款:{{order.status}} <br>
-下單時間:{{order.status}} <br>
-送貨地址:{{order.shipping_address}} <br>
+    <!-- 頁碼 -->
+    {% for num in page_obj.paginator.page_range %}
+    {% if num == page_obj.number %}
+    {{num}}
+    {% else %}
+    <a href="{% url 'review-order' %}?page={{num}}">{{num}}</a>
+    {% endif %}
+    {% endfor %}
 
-{% for orderitem in orderitems %}
-商品名稱:{{orderitem.product.product_name}} <br>
-數量:{{orderitem.quantity}} <br>
-價格:{{orderitem.order_price}} <br>
-<br>
+    {% if page_obj.has_next %}
+    <a href="{% url 'review-order' %}?page={{page_obj.next_page_number}}">下一頁</a>
+    {% endif %}
 
-{% endfor %}
-<hr>
-{% endfor %}
-
-
+</div>
+<div id="message" style="text-align: center; margin-top: 10px;">
+    {{ message }}
+</div>
 
 
 {% endblock %}

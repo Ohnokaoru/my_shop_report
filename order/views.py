@@ -3,6 +3,7 @@ from cart.models import CartItem
 from django.contrib.auth.decorators import login_required
 from .models import Order, OrderItem
 from .forms import OrderForm
+from django.core.paginator import Paginator
 
 # Create your views here.
 
@@ -78,15 +79,30 @@ def review_order(request):
     if not orders:
         message = "沒有下單紀錄"
 
-    for order in orders:
-        orderitems = OrderItem.objects.filter(order=order)
+    paginator = Paginator(orders, 3)
+    try:
+        page_number = int(request.GET.get("page", 1))
+
+    except (ValueError, TypeError):
+        page_number = 1
+
+    page_obj = paginator.get_page(page_number)
 
     return render(
         request,
         "order/review-order.html",
-        {
-            "message": message,
-            "orders": orders,
-            "orderitems": orderitems,
-        },
+        {"message": message, "page_obj": page_obj},
     )
+
+
+# 檢視訂單詳細商品資訊
+@login_required
+def review_order_detail(request, order_id):
+    try:
+        order = Order.objects.get(user=request.user, id=order_id)
+    except Order.DoesNotExist:
+        return redirect("review-order")
+
+    orderitems = OrderItem.objects.filter(order=order)
+
+    return render(request, "order/review-order-detail.html", {"orderitems": orderitems})

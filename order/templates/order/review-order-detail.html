@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title%}檢視訂單詳細商品內容{% endblock %}
+
+{% block content %}
+<div id="title">
+    <h1>檢視訂單詳細商品內容</h1>
+</div>
+
+<div id="review-order-detail">
+    {% for orderitem in orderitems %}
+    商品內容:{{orderitem.product.product_name}} <br>
+    商品數量:{{orderitem.quantity}} <br>
+    單價:{{orderitem.order_price}} <br>
+    <br>
+    {% endfor %}
+</div>
+<div id="review-order-a-button">
+    <a href="{% url 'review-order' %}">回上一頁</a>
+</div>
+{% endblock %}
