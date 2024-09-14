@@ -775,7 +775,8 @@ review-order.html</panel_attributes>
     </coordinates>
     <panel_attributes>銷收量圖表
 
-sales-quantity-barchart.html</panel_attributes>
+sales-quantity-barchart.html
+bg=YELLOW</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -801,25 +802,14 @@ sales-quantity-barchart.html</panel_attributes>
     <additional_attributes>180.0;140.0;10.0;10.0</additional_attributes>
   </element>
   <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>960</x>
-      <y>1380</y>
-      <w>160</w>
-      <h>80</h>
-    </coordinates>
-    <panel_attributes/>
-    <additional_attributes/>
-  </element>
-  <element>
     <id>Relation</id>
     <coordinates>
-      <x>1030</x>
-      <y>1330</y>
-      <w>30</w>
-      <h>70</h>
+      <x>180</x>
+      <y>490</y>
+      <w>100</w>
+      <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;20.0</additional_attributes>
   </element>
 </diagram>
