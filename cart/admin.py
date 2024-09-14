@@ -14,10 +14,10 @@ class CartItemAdmin(admin.ModelAdmin):
 
     # self->CartItemAdmin，obj->CartItem
     def username(self, obj):
-        return obj.User.username
+        return obj.user.username
 
     def product_name(self, obj):
-        return obj.Product.product_name
+        return obj.product.product_name
 
 
 admin.site.register(CartItem, CartItemAdmin)

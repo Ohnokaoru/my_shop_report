@@ -128,7 +128,9 @@ table#review-product-detail-table {
 }
 
 table#review-cart-table td,
-table#review-cart-table {
+table#review-cart-table,
+#user-register-form-table,
+#user-register-form-table td {
     border: none;
     text-align: left;
 
