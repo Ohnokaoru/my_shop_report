@@ -136,12 +136,3 @@ CAPTCHA_IMAGE_SIZE = (150, 75)
 # 圖片上傳路徑
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
-
-
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = "smtp.live.com"  #  或"smtp.office365.com"
-EMAIL_PORT = 587  # 或 465
-EMAIL_USE_TLS = True  # 若使用 587 端口（TLS）
-# EMAIL_USE_SSL = True  # 若使用 465 端口（SSL），需要取消註解此行並註解掉 EMAIL_USE_TLS
-EMAIL_HOST_USER = "x06nk4alau@live.jp"
-EMAIL_HOST_PASSWORD = os.getenv("EMAIL_APP_PASSWPRD")

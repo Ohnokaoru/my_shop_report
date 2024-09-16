@@ -30,6 +30,6 @@ urlpatterns = [
     path("", include("order.urls")),
 ]
 
-# 開發時內建伺服器服務媒體文件(會經常更動)，(部屬後則交給server)
+# 開發時內建伺服器服務媒體文件(會經常更動)，(佈署後則交給server)
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
