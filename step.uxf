@@ -313,7 +313,7 @@ OrderItem(models.Model)
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>740</x>
+      <x>690</x>
       <y>1010</y>
       <w>150</w>
       <h>70</h>
@@ -419,11 +419,11 @@ edit-userprofile.html</panel_attributes>
     <coordinates>
       <x>610</x>
       <y>1030</y>
-      <w>150</w>
+      <w>100</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -481,8 +481,8 @@ reviewproduct_detail.html
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>1130</y>
+      <x>690</x>
+      <y>1090</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -497,29 +497,29 @@ bg=YELLOW</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>1160</y>
-      <w>110</w>
-      <h>80</h>
+      <y>1050</y>
+      <w>100</w>
+      <h>100</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>80.0;80.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>1210</y>
-      <w>110</w>
-      <h>70</h>
+      <y>1070</y>
+      <w>100</w>
+      <h>150</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90.0;50.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;130.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>700</x>
-      <y>1230</y>
+      <x>690</x>
+      <y>1170</y>
       <w>190</w>
       <h>70</h>
     </coordinates>
@@ -547,16 +547,16 @@ bg=YELLOW</panel_attributes>
       <x>510</x>
       <y>1250</y>
       <w>30</w>
-      <h>60</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>430</x>
-      <y>1290</y>
+      <y>1310</y>
       <w>190</w>
       <h>80</h>
     </coordinates>
@@ -575,7 +575,7 @@ review-cart.html
       <h>70</h>
     </coordinates>
     <panel_attributes>Note..
-edit_cart
+edit_cartitem
 涵蓋刪除功能</panel_attributes>
     <additional_attributes/>
   </element>
@@ -611,23 +611,23 @@ delete-cartitem
     <id>Relation</id>
     <coordinates>
       <x>430</x>
-      <y>1360</y>
+      <y>1380</y>
       <w>60</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;80.0;40.0;10.0</additional_attributes>
+    <additional_attributes>10.0;60.0;40.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>550</x>
-      <y>1360</y>
+      <y>1380</y>
       <w>40</w>
-      <h>100</h>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>20.0;80.0;10.0;10.0</additional_attributes>
+    <additional_attributes>20.0;60.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -647,18 +647,18 @@ clear-cartitem
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>1330</y>
+      <y>1350</y>
       <w>130</w>
-      <h>60</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>110.0;40.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;50.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>720</x>
-      <y>1340</y>
+      <y>1370</y>
       <w>150</w>
       <h>80</h>
     </coordinates>
@@ -672,7 +672,7 @@ edit-cartitem.html
     <id>Relation</id>
     <coordinates>
       <x>610</x>
-      <y>1310</y>
+      <y>1330</y>
       <w>330</w>
       <h>30</h>
     </coordinates>
@@ -685,10 +685,10 @@ edit-cartitem.html
       <x>910</x>
       <y>1020</y>
       <w>30</w>
-      <h>320</h>
+      <h>340</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;300.0;10.0;10.0</additional_attributes>
+    <additional_attributes>10.0;320.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -768,8 +768,8 @@ review-order.html</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>730</x>
-      <y>1480</y>
+      <x>690</x>
+      <y>1250</y>
       <w>220</w>
       <h>80</h>
     </coordinates>
@@ -793,13 +793,13 @@ bg=YELLOW</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>590</x>
-      <y>1340</y>
-      <w>200</w>
-      <h>160</h>
+      <x>610</x>
+      <y>1100</y>
+      <w>100</w>
+      <h>210</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>180.0;140.0;10.0;10.0</additional_attributes>
+    <additional_attributes>80.0;190.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
